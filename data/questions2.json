@@ -1,0 +1,101 @@
+[
+  {
+    "topic": "str",
+    "question": "Как перевести строку в нижний регистр?",
+    "correct": "lst.lower()",
+    "wrong1": "lower(lst)",
+    "wrong2": "lst.down()",
+    "wrong3": "нет такого метода",
+    "hint": "lst.lower() переводит всё в нижний регистр. \"Hello\".lower() → 'hello'"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, начинается ли строка с префикса?",
+    "correct": "lst.startswith(\"he\")",
+    "wrong1": "lst.startwith(\"he\")",
+    "wrong2": "startswith(lst, \"he\")",
+    "wrong3": "lst.find(\"he\") == 0",
+    "hint": "lst.startswith(\"he\") проверяет начало строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить пробелы с обеих сторон строки?",
+    "correct": "lst.strip()",
+    "wrong1": "lst.trim()",
+    "wrong2": "strip(lst)",
+    "wrong3": "lst.remove(' ')",
+    "hint": "lst.strip() удаляет лишние пробелы"
+  },
+  {
+    "topic": "str",
+    "question": "Как разбить строку на список по разделителю?",
+    "correct": "lst.split(\",\")",
+    "wrong1": "split(lst, \",\")",
+    "wrong2": "lst.divide(\",\")",
+    "wrong3": "lst.separate(\",\")",
+    "hint": "lst.split(\",\") делит строку на части"
+  },
+  {
+    "topic": "str",
+    "question": "Как объединить элементы списка в строку через разделитель?",
+    "correct": "' '.join(lst)",
+    "wrong1": "lst.join(\" \")",
+    "wrong2": "join(lst, \" \")",
+    "wrong3": "lst.combine(\" \")",
+    "hint": "' '.join(['a','b']) → 'ab'"
+  },
+  {
+    "topic": "int",
+    "question": "Как преобразовать строку в целое число?",
+    "correct": "int(\"123\")",
+    "wrong1": "float(\"123\")",
+    "wrong2": "str(123)",
+    "wrong3": "int.convert()",
+    "hint": "int(\"123\") → 123"
+  },
+  {
+    "topic": "int",
+    "question": "Как получить остаток от деления 7 % 3?",
+    "correct": "%",
+    "wrong1": "//",
+    "wrong2": "div()",
+    "wrong3": "math.mod(7, 3)",
+    "hint": "lst % 3 → 1"
+  },
+  {
+    "topic": "int",
+    "question": "Как округлить число вниз до целого?",
+    "correct": "math.floor(3.9)",
+    "wrong1": "round(3.9)",
+    "wrong2": "math.ceil(3.1)",
+    "wrong3": "lst.floor()",
+    "hint": "math.floor(3.9) → 3"
+  },
+  {
+    "topic": "int",
+    "question": "Как получить длину числа?",
+    "correct": "len(str(123))",
+    "wrong1": "len(123)",
+    "wrong2": "lst.length()",
+    "wrong3": "math.size(123)",
+    "hint": "Число нужно привести к строке: len(str(123)) → 3"
+  },
+  {
+    "topic": "float",
+    "question": "Как преобразовать строку во float?",
+    "correct": "float(\"123.45\")",
+    "wrong1": "int(\"123.45\")",
+    "wrong2": "str(\"123.45\")",
+    "wrong3": "float.convert()",
+    "hint": "float(\"123.45\") → 123.45"
+  },
+  {
+    "topic": "float",
+    "question": "Как проверить, является ли число NaN?",
+    "correct": "math.isnan(x)",
+    "wrong1": "x.is_nan()",
+    "wrong2": "isnan(x)",
+    "wrong3": "type(x) == float",
+    "hint": "import math; math.isnan(float('nan')) → True"
+  }
+]

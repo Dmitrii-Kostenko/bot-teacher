@@ -1,0 +1,783 @@
+[
+  {
+    "topic": "str",
+    "question": "Как перевести строку в нижний регистр?",
+    "correct": "s.lower()",
+    "wrong1": "lower(s)",
+    "wrong2": "s.down()",
+    "wrong3": "нет такого метода",
+    "hint": "s.lower() переводит всё в нижний регистр. 'Hello'.lower() → 'hello'"
+  },
+  {
+    "topic": "str",
+    "question": "Как сделать первую букву строки заглавной?",
+    "correct": "s.capitalize()",
+    "wrong1": "s.title()",
+    "wrong2": "s.upper()",
+    "wrong3": "s.first_upper()",
+    "hint": "capitalize() делает первую букву заглавной, остальные строчные"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить пробелы слева и справа от строки?",
+    "correct": "s.strip()",
+    "wrong1": "s.trim()",
+    "wrong2": "s.remove_spaces()",
+    "wrong3": "s.clean()",
+    "hint": "strip() удаляет пробелы и спецсимволы с обеих сторон"
+  },
+  {
+    "topic": "str",
+    "question": "Как заменить часть строки на другую?",
+    "correct": "s.replace('a', 'b')",
+    "wrong1": "replace(s, 'a', 'b')",
+    "wrong2": "s.sub('a', 'b')",
+    "wrong3": "s.change('a', 'b')",
+    "hint": "s.replace(old, new) заменяет все вхождения"
+  },
+  {
+    "topic": "str",
+    "question": "Как разбить строку на список по разделителю?",
+    "correct": "s.split(',')",
+    "wrong1": "s.split_by(',')",
+    "wrong2": "s.partition(',')",
+    "wrong3": "s.divide(',')",
+    "hint": "split(',') создаёт список из частей строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, начинается ли строка с подстроки 'abc'?",
+    "correct": "s.startswith('abc')",
+    "wrong1": "s.start_with('abc')",
+    "wrong2": "s.is_start('abc')",
+    "wrong3": "s.find('abc') == 0",
+    "hint": "startswith() возвращает True/False"
+  },
+  {
+    "topic": "str",
+    "question": "Как привести строку к верхнему регистру?",
+    "correct": "s.upper()",
+    "wrong1": "upper(s)",
+    "wrong2": "s.higher()",
+    "wrong3": "s.toupper()",
+    "hint": "s.upper() переводит всю строку в верхний регистр"
+  },
+  {
+    "topic": "str",
+    "question": "Как найти индекс подстроки 'xyz'?",
+    "correct": "s.find('xyz')",
+    "wrong1": "s.index('xyz')",
+    "wrong2": "s.search('xyz')",
+    "wrong3": "s.locate('xyz')",
+    "hint": "find() возвращает -1, если не найдено"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить длину строки?",
+    "correct": "len(s)",
+    "wrong1": "s.length()",
+    "wrong2": "s.size()",
+    "wrong3": "s.chars()",
+    "hint": "len(s) возвращает количество символов"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, состоит ли строка только из букв?",
+    "correct": "s.isalpha()",
+    "wrong1": "s.alnum()",
+    "wrong2": "s.isdigit()",
+    "wrong3": "s.isalnum()",
+    "hint": "isalpha() возвращает True, если только буквы"
+  },
+  {
+    "topic": "str",
+    "question": "Как объединить список строк в одну строку?",
+    "correct": "''.join(list)",
+    "wrong1": "list.join('')",
+    "wrong2": "merge('', list)",
+    "wrong3": "combine('', list)",
+    "hint": "join() вызывается на строке-разделителе"
+  },
+  {
+    "topic": "str",
+    "question": "Как определить, является ли строка пустой?",
+    "correct": "len(s) == 0",
+    "wrong1": "s.empty()",
+    "wrong2": "s.isempty()",
+    "wrong3": "s.is_empty()",
+    "hint": "Проверяют через len(s)"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли подстрока в строке?",
+    "correct": "'sub' in s",
+    "wrong1": "s.contains('sub')",
+    "wrong2": "s.has('sub')",
+    "wrong3": "s.include('sub')",
+    "hint": "in используется для проверки содержания"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, заканчивается ли строка на 'txt'?",
+    "correct": "s.endswith('txt')",
+    "wrong1": "s.end_with('txt')",
+    "wrong2": "s.is_end('txt')",
+    "wrong3": "s.last('txt')",
+    "hint": "endswith() возвращает True, если строка заканчивается указанной подстрокой"
+  },
+  {
+    "topic": "str",
+    "question": "Как сделать первую букву каждого слова заглавной?",
+    "correct": "s.title()",
+    "wrong1": "s.capitalize()",
+    "wrong2": "s.upper()",
+    "wrong3": "s.allcaps()",
+    "hint": "title() делает каждое слово с заглавной буквы"
+  },
+  {
+    "topic": "str",
+    "question": "Как преобразовать число в строку?",
+    "correct": "str(42)",
+    "wrong1": "int.to_str(42)",
+    "wrong2": "convert.str(42)",
+    "wrong3": "to.string(42)",
+    "hint": "str() преобразует любой тип в строку"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, содержит ли строка цифры?",
+    "correct": "any(c.isdigit() for c in s)",
+    "wrong1": "s.isnumeric()",
+    "wrong2": "s.isdigit()",
+    "wrong3": "s.isnumber()",
+    "hint": "isdigit() возвращает True, если вся строка — цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить символы с начала и конца строки?",
+    "correct": "s.strip(' ')",
+    "wrong1": "s.trim(' ')",
+    "wrong2": "s.clear(' ')",
+    "wrong3": "s.cut(' ')",
+    "hint": "strip('x') удаляет все 'x' с двух сторон"
+  },
+  {
+    "topic": "str",
+    "question": "Как центрировать строку в поле длиной 20?",
+    "correct": "s.center(20)",
+    "wrong1": "s.pad(20)",
+    "wrong2": "s.fill(20)",
+    "wrong3": "s.middle(20)",
+    "hint": "center() добавляет пробелы с обеих сторон"
+  },
+  {
+    "topic": "str",
+    "question": "Как заменить все пробелы на '_'?",
+    "correct": "s.replace(' ', '_')",
+    "wrong1": "s.sub(' ', '_')",
+    "wrong2": "s.swap(' ', '_')",
+    "wrong3": "s.set(' ', '_')",
+    "hint": "replace() заменяет старые значения на новые"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, все ли символы в строке маленькие?",
+    "correct": "s.islower()",
+    "wrong1": "s.is_lower()",
+    "wrong2": "s.check_lower()",
+    "wrong3": "s.all_lower()",
+    "hint": "islower() возвращает True, если все буквы маленькие"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, все ли символы в строке большие?",
+    "correct": "s.isupper()",
+    "wrong1": "s.is_upper()",
+    "wrong2": "s.uppercase()",
+    "wrong3": "s.isuppercase()",
+    "hint": "isupper() возвращает True, если все буквы большие"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка состоит из цифр?",
+    "correct": "s.isdigit()",
+    "wrong1": "s.is_number()",
+    "wrong2": "s.isnum()",
+    "wrong3": "s.isnumeric()",
+    "hint": "isdigit() работает только с цифрами"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить Unicode код символа 'A'?",
+    "correct": "ord('A')",
+    "wrong1": "chr('A')",
+    "wrong2": "code('A')",
+    "wrong3": "char_code('A')",
+    "hint": "ord() возвращает числовой код символа"
+  },
+  {
+    "topic": "str",
+    "question": "Как преобразовать код 65 в символ?",
+    "correct": "chr(65)",
+    "wrong1": "ord(65)",
+    "wrong2": "str(65)",
+    "wrong3": "num.to_char(65)",
+    "hint": "chr() преобразует числовой код в символ"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, является ли строка палиндромом?",
+    "correct": "s == s[::-1]",
+    "wrong1": "s.palindrome()",
+    "wrong2": "s.reverse() == s",
+    "wrong3": "reversed(s) == s",
+    "hint": "Используй срезы: s == s[::-1]"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить все запятые из строки?",
+    "correct": "s.replace(',', '')",
+    "wrong1": "s.delete(',', '')",
+    "wrong2": "s.remove(',', '')",
+    "wrong3": "s.filter(',', '')",
+    "hint": "replace(',', '') уберёт все запятые"
+  },
+  {
+    "topic": "str",
+    "question": "Как повторить строку 3 раза?",
+    "correct": "s * 3",
+    "wrong1": "s.repeat(3)",
+    "wrong2": "repeat(s, 3)",
+    "wrong3": "multiply(s, 3)",
+    "hint": "Умножение строки на число — способ повторить её"
+  },
+  {
+    "topic": "str",
+    "question": "Как создать строку из числа 123?",
+    "correct": "str(123)",
+    "wrong1": "int.to_string(123)",
+    "wrong2": "stringify(123)",
+    "wrong3": "convert.str(123)",
+    "hint": "str(123) → '123'"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли 'apple' в строке?",
+    "correct": "'apple' in s",
+    "wrong1": "s.find('apple') != -1",
+    "wrong2": "s.contains('apple')",
+    "wrong3": "s.match('apple')",
+    "hint": "in используется для проверки наличия подстроки"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить последний символ строки?",
+    "correct": "s[:-1]",
+    "wrong1": "s.pop()",
+    "wrong2": "s.truncate(1)",
+    "wrong3": "s.remove_last()",
+    "hint": "Срезы позволяют управлять строкой без методов"
+  },
+  {
+    "topic": "str",
+    "question": "Как сделать строку звёздочками?",
+    "correct": "'*'*len(s)",
+    "wrong1": "s.hide()",
+    "wrong2": "s.mask('*')",
+    "wrong3": "s.encrypt('*')",
+    "hint": "len(s) возвращает длину строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, начинается ли строка с 'http://'?",
+    "correct": "s.startswith('http://')",
+    "wrong1": "'http://' in s",
+    "wrong2": "s.find('http://') == 0",
+    "wrong3": "s.begin('http://')",
+    "hint": "startswith() проверяет начало строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить лишние пробелы с левой стороны?",
+    "correct": "s.lstrip()",
+    "wrong1": "s.strip()",
+    "wrong2": "s.left_strip()",
+    "wrong3": "s.ltrim()"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить лишние пробелы с правой стороны?",
+    "correct": "s.rstrip()",
+    "wrong1": "s.strip()",
+    "wrong2": "s.right_strip()",
+    "wrong3": "s.rtrim()"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, является ли строка пустой?",
+    "correct": "not s",
+    "wrong1": "s.isempty()",
+    "wrong2": "s == ''",
+    "wrong3": "len(s) is None",
+    "hint": "Пустая строка при сравнении с not вернёт True"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли в строке хотя бы одна цифра?",
+    "correct": "any(c.isdigit() for c in s)",
+    "wrong1": "s.has_digit()",
+    "wrong2": "s.contains_digit()",
+    "wrong3": "s.is_numeric()",
+    "hint": "isdigit() проверяет, является ли символ цифрой"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли в строке только пробелы?",
+    "correct": "s.isspace()",
+    "wrong1": "s.isempty()",
+    "wrong2": "s.isblank()",
+    "wrong3": "s.is_whitespace()",
+    "hint": "isspace() возвращает True, если только пробелы"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка состоит из букв и цифр?",
+    "correct": "s.isalnum()",
+    "wrong1": "s.isalpha()",
+    "wrong2": "s.isdigit()",
+    "wrong3": "s.isalphanum()",
+    "hint": "isalnum() возвращает True, если только буквы и цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка состоит из печатаемых символов?",
+    "correct": "s.isprintable()",
+    "wrong1": "s.printable()",
+    "wrong2": "s.is_readable()",
+    "wrong3": "s.isvisible()",
+    "hint": "isprintable() возвращает True, если все символы можно напечатать"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка не содержит спецсимволов?",
+    "correct": "s.isidentifier()",
+    "wrong1": "s.isname()",
+    "wrong2": "s.is_valid_name()",
+    "wrong3": "s.is_clean()",
+    "hint": "isidentifier() возвращает True, если строка может быть переменной"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка состоит из десятичных чисел?",
+    "correct": "s.isdecimal()",
+    "wrong1": "s.isdigit()",
+    "wrong2": "s.isnumeric()",
+    "wrong3": "s.is_number()",
+    "hint": "isdecimal() работает только с цифрами 0–9"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка заканчивается на '.csv'?",
+    "correct": "s.endswith('.csv')",
+    "wrong1": "'.csv' in s",
+    "wrong2": "s.find('.csv') > -1",
+    "wrong3": "s.tail('.csv')",
+    "hint": "endswith() проверяет окончание строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как сделать все буквы заглавными?",
+    "correct": "s.upper()",
+    "wrong1": "s.capital()",
+    "wrong2": "s.big()",
+    "wrong3": "s.to_upper()",
+    "hint": "upper() переводит все буквы в верхний регистр"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — корректный идентификатор?",
+    "correct": "s.isidentifier()",
+    "wrong1": "s.isvalid()",
+    "wrong2": "s.isname()",
+    "wrong3": "s.isid()",
+    "hint": "isidentifier() проверяет, можно ли использовать строку как имя переменной"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — корректная дата?",
+    "correct": "datetime.strptime(s, '%Y-%m-%d')",
+    "wrong1": "s.isdate('%Y-%m-%d')",
+    "wrong2": "parse_date(s)",
+    "wrong3": "check.date(s)",
+    "hint": "strptime() парсит строку по формату даты"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, начинается ли строка с 'https://'?",
+    "correct": "s.startswith('https://')",
+    "wrong1": "'https://' in s",
+    "wrong2": "s.find('https://') == 0",
+    "wrong3": "s.url_check('https://')",
+    "hint": "startswith() проверяет начало строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — email?",
+    "correct": "import re; re.match(r'^\\w+@\\w+\\.\\w+$', s)",
+    "wrong1": "s.isemail()",
+    "wrong2": "validate.email(s)",
+    "wrong3": "s.check_email()",
+    "hint": "Регулярные выражения помогают проверять формат email"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — URL?",
+    "correct": "re.match(r'https?://.*', s)",
+    "wrong1": "s.isurl()",
+    "wrong2": "validate.url(s)",
+    "wrong3": "s.check_url()",
+    "hint": "Регулярка позволяет проверить формат URL"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить подстроку до первого пробела?",
+    "correct": "s.split()[0]",
+    "wrong1": "s.substring(0, s.find(' '))",
+    "wrong2": "s[:s.index(' ')]",
+    "wrong3": "s.before(' ')",
+    "hint": "split() делит строку по пробелам"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли в строке только пробелы?",
+    "correct": "s.isspace()",
+    "wrong1": "s.isblank()",
+    "wrong2": "s.is_empty()",
+    "wrong3": "s.iswhite()",
+    "hint": "isspace() возвращает True, если все символы — пробельные"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить только уникальные символы строки?",
+    "correct": "set(s)",
+    "wrong1": "s.unique_chars()",
+    "wrong2": "s.distinct()",
+    "wrong3": "s.deduplicate()",
+    "hint": "set(s) возвращает множество из символов строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли в строке только заглавные буквы?",
+    "correct": "s.isupper()",
+    "wrong1": "s.upper()",
+    "wrong2": "s.is_upper()",
+    "wrong3": "s.all_upper()",
+    "hint": "isupper() возвращает True, если все буквы заглавные"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли в строке только строчные буквы?",
+    "correct": "s.islower()",
+    "wrong1": "s.is_lower()",
+    "wrong2": "s.lowercase()",
+    "wrong3": "s.is_lowercase()",
+    "hint": "islower() возвращает True, если все буквы строчные"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это номер телефона?",
+    "correct": "re.match(r'^\\+\\d{10,}$', s)",
+    "wrong1": "s.isphone()",
+    "wrong2": "s.check_phone()",
+    "wrong3": "s.validate_phone()",
+    "hint": "Регулярка с '+' и минимум 10 цифр"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это IP-адрес?",
+    "correct": "re.match(r'\\d+\\.\\d+\\.\\d+\\.\\d+', s)",
+    "wrong1": "s.isip()",
+    "wrong2": "s.check_ip()",
+    "wrong3": "s.validate_ip()",
+    "hint": "Регулярка для IP-адреса: 4 группы цифр через точку"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить длину строки?",
+    "correct": "len(s)",
+    "wrong1": "s.length()",
+    "wrong2": "s.size()",
+    "wrong3": "s.count()",
+    "hint": "len(s) возвращает количество символов"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить все цифры из строки?",
+    "correct": "re.sub(r'\\d+', '', s)",
+    "wrong1": "s.replace('\\d', '')",
+    "wrong2": "s.remove_digits()",
+    "wrong3": "s.filter_digits()",
+    "hint": "re.sub(pattern, '', s) заменяет совпадения"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить первые 5 символов строки?",
+    "correct": "s[:5]",
+    "wrong1": "s.head(5)",
+    "wrong2": "s.slice(5)",
+    "wrong3": "s.take(5)",
+    "hint": "Срезы возвращают часть строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, является ли строка пустой?",
+    "correct": "not s",
+    "wrong1": "s.is_empty()",
+    "wrong2": "s == ''",
+    "wrong3": "len(s) == 0",
+    "hint": "Пустая строка — это False в булевом контексте"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, начинается ли строка с числа?",
+    "correct": "s[0].isdigit()",
+    "wrong1": "s.startswith(int)",
+    "wrong2": "s[0] in '0123456789'",
+    "wrong3": "s.isnumeric()",
+    "hint": "isdigit() проверяет, является ли символ цифрой"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить последний символ строки?",
+    "correct": "s[-1]",
+    "wrong1": "s.pop()",
+    "wrong2": "s.last()",
+    "wrong3": "s.get(-1)",
+    "hint": "s[-1] — последний символ строки"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли в строке специальных символов?",
+    "correct": "not s.isalnum()",
+    "wrong1": "s.isalpha()",
+    "wrong2": "s.isnumeric()",
+    "wrong3": "s.is_special()",
+    "hint": "isalnum() возвращает True, если только буквы и цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить все гласные из строки?",
+    "correct": "re.sub(r'[aeiouAEIOU]', '', s)",
+    "wrong1": "s.replace('a', '').replace('e', '')...",
+    "wrong2": "filter(lambda c: c not in 'aeiou', s)",
+    "wrong3": "s.remove_vowels()",
+    "hint": "re.sub(r'[aeiou]', '', s) — самый простой способ"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, является ли строка числом?",
+    "correct": "s.isdigit()",
+    "wrong1": "s.is_number()",
+    "wrong2": "s.isnumeric()",
+    "wrong3": "s.is_int()",
+    "hint": "isdigit() возвращает True, если строка — цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить все символы, кроме букв и цифр?",
+    "correct": "re.sub(r'[^\\w]', '', s)",
+    "wrong1": "s.replace_all(r'[^\\w]', '')",
+    "wrong2": "s.filter(r'[^\\w]')",
+    "wrong3": "s.remove_non_alphanum()",
+    "hint": "re.sub(r'[^\\w]', '', s) — удаляет всё, кроме букв и цифр"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли в строке '@'?",
+    "correct": "'@' in s",
+    "wrong1": "s.contains('@')",
+    "wrong2": "s.find('@') != -1",
+    "wrong3": "s.includes('@')",
+    "hint": "in — оператор проверки наличия подстроки"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить все пробелы из строки?",
+    "correct": "s.replace(' ', '')",
+    "wrong1": "s.strip()",
+    "wrong2": "s.remove(' ')",
+    "wrong3": "s.filter(' ')",
+    "hint": "replace(' ', '') заменяет все пробелы"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — шестнадцатеричное число?",
+    "correct": "s.startswith('0x')",
+    "wrong1": "s.is_hex()",
+    "wrong2": "s.hex()",
+    "wrong3": "s.is_xdigit()",
+    "hint": "Шестнадцатеричные числа начинаются с '0x'"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить все гласные из строки?",
+    "correct": "re.sub(r'[aeiouAEIOU]', '', s)",
+    "wrong1": "s.replace('a','').replace('e','')...",
+    "wrong2": "s.filter(lambda c: c not in 'aeiou')",
+    "wrong3": "s.remove_vowels()",
+    "hint": "re.sub() удобно использовать для фильтрации"
+  },
+  {
+    "topic": "str",
+    "question": "Как удалить все согласные из строки?",
+    "correct": "re.sub(r'[^aeiou\\W\\d]', '', s)",
+    "wrong1": "s.replace('bcdfghjklmnpqrstvwxyz', '')",
+    "wrong2": "filter(lambda c: c in 'aeiou', s)",
+    "wrong3": "s.remove_consonants()",
+    "hint": "re.sub() + регулярка помогут вырезать согласные"
+  },
+  {
+    "topic": "str",
+    "question": "Как получить строку задом наперёд?",
+    "correct": "s[::-1]",
+    "wrong1": "reverse(s)",
+    "wrong2": "s.reverse()",
+    "wrong3": "s.flip()",
+    "hint": "Срез [::-1] меняет порядок символов"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это GUID?",
+    "correct": "re.match(r'^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$', s)",
+    "wrong1": "s.isguid()",
+    "wrong2": "s.guid_check()",
+    "wrong3": "s.is_uuid()",
+    "hint": "GUID — строка вида aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — MAC-адрес?",
+    "correct": "re.match(r'^([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$', s)",
+    "wrong1": "s.ismac()",
+    "wrong2": "s.mac_check()",
+    "wrong3": "s.is_mac_address()",
+    "hint": "MAC-адрес: 6 пар шестнадцатеричных чисел через :"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это дата?",
+    "correct": "try: datetime.strptime(s, '%Y-%m-%d') except ValueError: False",
+    "wrong1": "s.isdate('%Y-%m-%d')",
+    "wrong2": "s.check_date('%Y-%m-%d')",
+    "wrong3": "s.validate_date('%Y-%m-%d')",
+    "hint": "strptime() парсит дату или выбрасывает ошибку"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это email?",
+    "correct": "re.match(r'^\\w+@\\w+\\.\\w+$', s)",
+    "wrong1": "s.isemail()",
+    "wrong2": "s.validate_email()",
+    "wrong3": "s.check_email()",
+    "hint": "Email должен содержать @ и домен"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это URL?",
+    "correct": "re.match(r'https?://.*', s)",
+    "wrong1": "s.isurl()",
+    "wrong2": "s.url_check()",
+    "wrong3": "s.is_web()",
+    "hint": "URL начинается с http:// или https://"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это JSON?",
+    "correct": "try: json.loads(s) except: False",
+    "wrong1": "s.isjson()",
+    "wrong2": "s.json_check()",
+    "wrong3": "s.is_json()",
+    "hint": "json.loads() попробует распарсить JSON"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это XML?",
+    "correct": "try: ET.fromstring(s) except: False",
+    "wrong1": "s.isxml()",
+    "wrong2": "s.xml_check()",
+    "wrong3": "s.is_xml()",
+    "hint": "from xml.etree import ElementTree as ET"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это HTML?",
+    "correct": "BeautifulSoup(s, 'html.parser')",
+    "wrong1": "s.ishtml()",
+    "wrong2": "s.html_check()",
+    "wrong3": "s.is_html()",
+    "hint": "from bs4 import BeautifulSoup"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это SQL-запрос?",
+    "correct": "s.strip().lower().startswith('select')",
+    "wrong1": "s.is_sql()",
+    "wrong2": "s.sql_check()",
+    "wrong3": "s.is_sql_query()",
+    "hint": "SQL-запрос обычно начинается с SELECT, INSERT и т.д."
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это телефон?",
+    "correct": "re.match(r'^\\+\\d{10,}$', s)",
+    "wrong1": "s.isphone()",
+    "wrong2": "s.phone_check()",
+    "wrong3": "s.is_phone()",
+    "hint": "Телефон начинается с '+' и содержит минимум 10 цифр"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это HEX цвет?",
+    "correct": "re.match(r'#(?:[0-9a-fA-F]{3}){1,2}$', s)",
+    "wrong1": "s.iscolor()",
+    "wrong2": "s.is_hex_color()",
+    "wrong3": "s.color_check()",
+    "hint": "HEX-цвет начинается с # и имеет 6 шестнадцатеричных символов"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это имя файла?",
+    "correct": "os.path.isfile(s)",
+    "wrong1": "os.path.exists(s)",
+    "wrong2": "os.path.is_file(s)",
+    "wrong3": "os.path.file_exists(s)",
+    "hint": "isfile() проверяет, существует ли файл"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это путь к папке?",
+    "correct": "os.path.isdir(s)",
+    "wrong1": "os.path.isfolder(s)",
+    "wrong2": "os.path.is_dir(s)",
+    "wrong3": "os.path.folder_exists(s)",
+    "hint": "isdir() возвращает True, если это директория"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это путь к файлу?",
+    "correct": "os.path.exists(s) and not os.path.isdir(s)",
+    "wrong1": "os.path.isfile(s)",
+    "wrong2": "os.path.file_exists(s)",
+    "wrong3": "os.path.is_file(s)",
+    "hint": "exists() + isdir() = isfile()"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка — это UUID?",
+    "correct": "re.match(r'^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$', s)",
+    "wrong1": "s.isuuid()",
+    "wrong2": "s.uuid_check()",
+    "wrong3": "s.is_uuid()",
+    "hint": "UUID выглядит так: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+  }
+  ]

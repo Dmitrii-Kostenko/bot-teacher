@@ -1,101 +1,1091 @@
 [
   {
+    "topic": "list",
+    "question": "Какой метод добавляет элемент в конец списка lst?",
+    "correct": "lst.append(x)",
+    "wrong1": "lst.add(x)",
+    "wrong2": "lst.insert(0, x)",
+    "wrong3": "lst.extend(x)",
+    "hint": "lst.append(x) добавляет один элемент в конец списка"
+  },
+  {
+    "topic": "list",
+    "question": "Как удалить первoe вхождение х в список lst?",
+    "correct": "lst.remove(x)",
+    "wrong1": "lst.delete(x)",
+    "wrong2": "lst.pop(x)",
+    "wrong3": "lst.shift(x)",
+    "hint": "метод .remove(x) удаляет первое вхождение значения в список"
+  },
+  {
+    "topic": "list",
+    "question": "Как получить и удалить последний элемент списка lst?",
+    "correct": "lst.pop()",
+    "wrong1": "lst.pop(-1)",
+    "wrong2": "lst.last()",
+    "wrong3": "lst.get_last()",
+    "hint": "метод .pop() без аргументов удаляет и возвращает последний элемент"
+  },
+  {
+    "topic": "list",
+    "question": "Как очистить список lst от всех элементов?",
+    "correct": "lst.clear()",
+    "wrong1": "lst.reset()",
+    "wrong2": "lst = []",
+    "wrong3": "lst.empty()",
+    "hint": "метод .clear() удаляет все элементы из списка"
+  },
+  {
+    "topic": "list",
+    "question": "Как найти индекс первого вхождения элемента 'x' в список lst?",
+    "correct": "lst.index('x')",
+    "wrong1": "lst.find('x')",
+    "wrong2": "lst.search('x')",
+    "wrong3": "lst.locate('x')",
+    "hint": "метод .index('x') возвращает индекс первого вхождения элемента в список"
+  },
+  {
+    "topic": "list",
+    "question": "Как отсортировать список lst по возрастанию изменив исходный список?",
+    "correct": "lst.sort()",
+    "wrong1": "lst.sorted()",
+    "wrong2": "lst.order()",
+    "wrong3": "lst.arrange()",
+    "hint": "метод .sort() сортирует и изменяет исходный список"
+  },
+  {
+    "topic": "list",
+    "question": "Как отсортировать список lst по убыванию изменив список?",
+    "correct": "lst.sort(reverse=True)",
+    "wrong1": "lst.reverse().sort()",
+    "wrong2": "lst.sort(True)",
+    "wrong3": "lst.reverse_sort()",
+    "hint": "list.sort(reverse=True) в методе аргумент reverse=True отвечает за сортировку, по умолчанию False"
+  },
+  {
+    "topic": "list",
+    "question": "Как перевернуть список lst меняя сам список?",
+    "correct": "lst.reverse()",
+    "wrong1": "lst.flip()",
+    "wrong2": "lst.reversed()",
+    "wrong3": "lst.rev()",
+    "hint": ".reverse() меняет порядок элементов в списке на обратный"
+  },
+  {
+    "topic": "list",
+    "question": "Как скопировать список lst?",
+    "correct": "lst.copy()",
+    "wrong1": "lst.clone()",
+    "wrong2": "lst.duplicate()",
+    "wrong3": "lst.new_list()",
+    "hint": ".copy() создаёт поверхностную копию списка"
+  },
+  {
+    "topic": "list",
+    "question": "Как объединить два списка [1, 2] и [3, 4]?",
+    "correct": "[1, 2] + [3, 4]",
+    "wrong1": ".merge(list2)",
+    "wrong2": ".union(list2)",
+    "wrong3": "[1, 2] & [3, 4]",
+    "hint": "списки можно соеденить с помощью +. пример:[1, 2] + [3, 4] → [1, 2, 3, 4]"
+  },
+  {
+    "topic": "list",
+    "question": "Как проверить, есть ли элемент в списке?",
+    "correct": "'x' in list",
+    "wrong1": ".contains('x')",
+    "wrong2": ".has('x')",
+    "wrong3": ".check('x')",
+    "hint": "Оператор `in` используется для проверки наличия элемента в списке"
+  },
+  {
+    "topic": "list",
+    "question": "Как получить длину списка?",
+    "correct": "len(lst)",
+    "wrong1": ".length()",
+    "wrong2": ".size()",
+    "wrong3": ".count()",
+    "hint": "len(lst) возвращает количество элементов"
+  },
+  {
+    "topic": "list",
+    "question": "Как удалить элемент из списка lst по индексу и вернуть его значение?",
+    "correct": "lst.pop(i)",
+    "wrong1": "lst.remove(i)",
+    "wrong2": "lst.del(i)",
+    "wrong3": "lst.delete(i)",
+    "hint": "если в метод .pop(i) передать индекс i то, метод удаляет и возвращает элемент под индексом i"
+  },
+  {
+    "topic": "list",
+    "question": "Как вставить элемент на определённую позицию в списке lst?",
+    "correct": "lst.insert(i, x)",
+    "wrong1": "lst.add(i, x)",
+    "wrong2": "lst.put(i, x)",
+    "wrong3": "lst.push(i, x)",
+    "hint": "в метода .insert(i, x) передается i номер индекса и x значение которое вставляем, элемент с этого индекса переходит вправо"
+  },
+  {
+    "topic": "list",
+    "question": "Как получить все элементы списка в обратном порядке не меняя его?",
+    "correct": "[::-1]",
+    "wrong1": ".reverse()",
+    "wrong2": ".flip()",
+    "wrong3": ".invert()",
+    "hint": "Срез [::-1] возвращает обратную копию списка, в отличии от метода .reverse() список не менятеся"
+  },
+  {
+    "topic": "list",
+    "question": "Как посчитать количество вхождений элемента 'x' в список lst?",
+    "correct": "lst.count('x')",
+    "wrong1": "lst.how_many('x')",
+    "wrong2": "lst.times('x')",
+    "wrong3": "lst.freq('x')",
+    "hint": "lst.count('x') возвращает сколько раз встречается переданный аргумент в списке"
+  },
+  {
+    "topic": "list",
+    "question": "Как удалить все элементы, равные 'x'?",
+    "correct": "lst[:] = [item for item in lst if item != 'x']",
+    "wrong1": ".remove_all('x')",
+    "wrong2": ".delete_all('x')",
+    "wrong3": ".filter_out('x')",
+    "hint": "Используй генератор списка с фильтром"
+  },
+  {
+    "topic": "list",
+    "question": "Как объединить элементы списка в строку?",
+    "correct": "','.join(map(str, lst))",
+    "wrong1": ".to_str(',')",
+    "wrong2": ".join(',')",
+    "wrong3": ".combine(',')",
+    "hint": "','.join([a, b, c]) → ''a,b,c'join() работает только с элементами типа str"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nnumbers = [10, 20, 30]\nnumbers.pop(1)\nprint(numbers)",
+    "correct": "[10, 30]",
+    "wrong1": "[20, 30]",
+    "wrong2": "[10, 20]",
+    "wrong3": "[10, 20, 30]",
+    "hint": ".pop(1) удаляет элемент с индексом 1"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nfruits = ['apple', 'banana', 'cherry']\nfruits.reverse()\nprint(fruits)",
+    "correct": "['cherry', 'banana', 'apple']",
+    "wrong1": "['apple', 'cherry', 'banana']",
+    "wrong2": "['apple', 'banana', 'cherry']",
+    "wrong3": "[]",
+    "hint": ".reverse() переворачивает список на месте"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nletters = ['a', 'b', 'c']\nnew_letters = letters[::-1]\nprint(letters)",
+    "correct": "['a', 'b', 'c']",
+    "wrong1": "['c', 'b', 'a']",
+    "wrong2": "[]",
+    "wrong3": "'c', 'b', 'a'",
+    "hint": "Срез [::-1] не изменяет исходный список,new_letters будет ссылаться на список letters"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nnums = [1, 2, 3]\nnums.append([4, 5])\nprint(nums)",
+    "correct": "[1, 2, 3, [4, 5]]",
+    "wrong1": "[1, 2, 3, 4, 5]",
+    "wrong2": "[1, 2, 3, 4, 5]",
+    "wrong3": "[[1, 2, 3], [4, 5]]",
+    "hint": ".append() добавляет объект как один элемент"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nnums = [1, 2, 3]\nnums.extend([4, 5])\nprint(nums)",
+    "correct": "[1, 2, 3, 4, 5]",
+    "wrong1": "[1, 2, 3, [4, 5]]",
+    "wrong2": "[[1, 2, 3], 4, 5]",
+    "wrong3": "[1, 2, 3]",
+    "hint": ".extend() добавляет все элементы из другого списка"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nmy_list = [1, 2, 3, 4]\nresult = my_list[1:3]\nprint(result)",
+    "correct": "[2, 3]",
+    "wrong1": "[1, 2, 3]",
+    "wrong2": "[2, 3, 4]",
+    "wrong3": "[1, 2]",
+    "hint": "Срез от 1 до 3 (не включая 3)"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nwords = ['cat', 'window', 'defenestrate']\nwords.sort(key=len)\nprint(words)",
+    "correct": "['cat', 'window', 'defenestrate']",
+    "wrong1": "['defenestrate', 'window', 'cat']",
+    "wrong2": "['window', 'defenestrate', 'cat']",
+    "wrong3": "['cat', 'defenestrate', 'window']",
+    "hint": "Сортировка по длине слов: `len`, параметр key позволяет указать функцию , которая будет использоваться для вычисления ключа сортировки"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\ndata = [5, 2, 9, 5, 7, 5]\ndata.remove(5)\nprint(data)",
+    "correct": "[2, 9, 5, 7, 5]",
+    "wrong1": "[2, 9, 7]",
+    "wrong2": "[5, 2, 9, 7, 5]",
+    "wrong3": "[]",
+    "hint": ".remove(x) удаляет только первое вхождение x"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nlst = [1, 2, 3]\nlst.insert(1, 99)\nprint(lst)",
+    "correct": "[1, 99, 2, 3]",
+    "wrong1": "[99, 1, 2, 3]",
+    "wrong2": "[1, 2, 99, 3]",
+    "wrong3": "[1, 2, 3, 99]",
+    "hint": ".insert(i, x) вставляет x перед индексом i"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nvalues = [1, 2, 3, 4, 5]\nvalues[1:3] = []\nprint(values)",
+    "correct": "[1, 4, 5]",
+    "wrong1": "[1, 2, 3, 4, 5]",
+    "wrong2": "[2, 3, 4, 5]",
+    "wrong3": "[1, [], 4, 5]",
+    "hint": "Присвоение срезу заменяет элементы, элементы списка указанные в срезе удаляются"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nlst = [1, 2, 3, 4]\nnew_lst = lst.copy()\nlst.append(5)\nprint(new_lst)",
+    "correct": "[1, 2, 3, 4]",
+    "wrong1": "[1, 2, 3, 4, 5]",
+    "wrong2": "[2, 3, 4, 5]",
+    "wrong3": "[1, 2, 3, 4]",
+    "hint": ".copy() создаёт поверхностную копию списка"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nlst = [x for x in range(2, 8, 2)]\nprint(lst)",
+    "correct": "[2, 4, 6]",
+    "wrong1": "[2, 4, 6, 8]",
+    "wrong2": "[2, 4, 6, 8, 10]",
+    "wrong3": "[2, 4, 6, 8]",
+    "hint": "range(start=2, stop=8, step=2) → 2, 4, 6"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nvalues = [10, 20, 30, 40]\nvalues[2:] = [99, 100]\nprint(values)",
+    "correct": "[10, 20, 99, 100]",
+    "wrong1": "[10, 20, 30, 40, 99, 100]",
+    "wrong2": "[10, 20, 30, 40]",
+    "wrong3": "[99, 100]",
+    "hint": "Можно присвоить новый список части старого"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\ndata = [1, 2, 3, 4]\ndata.clear()\nprint(data)",
+    "correct": "[]",
+    "wrong1": "[1, 2, 3, 4]",
+    "wrong2": "[None]",
+    "wrong3": "''",
+    "hint": ".clear() удаляет все элементы из списка"
+  },
+  {
+    "topic": "list",
+    "question": "Что выведет код\nnums = [1, 2, 3]\nnums += [4, 5]\nprint(nums)",
+    "correct": "[1, 2, 3, 4, 5]",
+    "wrong1": "[1, 2, 3, [4, 5]]",
+    "wrong2": "[1, 2, 3, 4, 5]",
+    "wrong3": "[4, 5]",
+    "hint": "+= расширяет список, не создавая новый объект"
+  },
+  {
+    "topic": "dict",
+    "question": "Как получить значение по ключу или вернуть дефолтное, если ключ отсутствует?",
+    "correct": ".get(key, default)",
+    "wrong1": ".fetch(key, default)",
+    "wrong2": ".value(key, default)",
+    "wrong3": ".retrieve(key, default)",
+    "hint": ".get() безопасно возвращает значение или default"
+  },
+  {
+    "topic": "dict",
+    "question": "Как удалить и вернуть элемент по ключу, а если его нет — вернуть ошибку?",
+    "correct": "d[key]",
+    "wrong1": ".get(key)",
+    "wrong2": ".pop(key)",
+    "wrong3": ".remove(key)",
+    "hint": "d[key] вызывает KeyError, если ключа нет"
+  },
+  {
+    "topic": "dict",
+    "question": "Как удалить и вернуть элемент по ключу или дефолтное значение?",
+    "correct": ".pop(key, default)",
+    "wrong1": ".delete(key, default)",
+    "wrong2": ".remove(key, default)",
+    "wrong3": ".drop(key, default)",
+    "hint": ".pop() без default вызывает KeyError при отсутствии ключа"
+  },
+  {
+    "topic": "dict",
+    "question": "Как добавить пары из другого словаря в текущий?",
+    "correct": ".update(other_dict)",
+    "wrong1": ".merge(other_dict)",
+    "wrong2": ".add(other_dict)",
+    "wrong3": ".extend(other_dict)",
+    "hint": ".update() добавляет пары ключ-значение из другого словаря (other_dict) в текущий словарь."
+  },
+  {
+    "topic": "dict",
+    "question": "Как получить список всех ключей словаря?",
+    "correct": ".keys()",
+    "wrong1": ".values()",
+    "wrong2": ".items()",
+    "wrong3": ".all_keys()",
+    "hint": "keys() возвращает view-объект с ключами"
+  },
+  {
+    "topic": "dict",
+    "question": "Как получить список всех значений словаря?",
+    "correct": ".values()",
+    "wrong1": ".keys()",
+    "wrong2": ".items()",
+    "wrong3": ".all_values()",
+    "hint": "values() возвращает все значения словаря"
+  },
+  {
+    "topic": "dict",
+    "question": "Как получить список пар (ключ, значение)?",
+    "correct": ".items()",
+    "wrong1": ".keys()",
+    "wrong2": ".values()",
+    "wrong3": ".pairs()",
+    "hint": "items() возвращает представление пар"
+  },
+  {
+    "topic": "dict",
+    "question": "Как проверить наличие ключа в словаре?",
+    "correct": "'key' in d",
+    "wrong1": ".has_key('key')",
+    "wrong2": ".contains('key')",
+    "wrong3": ".exists('key')",
+    "hint": "in используется для проверки наличия ключа"
+  },
+  {
+    "topic": "dict",
+    "question": "Как очистить все элементы словаря?",
+    "correct": ".clear()",
+    "wrong1": "= {}",
+    "wrong2": ".reset()",
+    "wrong3": ".empty()",
+    "hint": "clear() удаляет все элементы исходного словаря"
+  },
+  {
+    "topic": "dict",
+    "question": "Как создать копию словаря?",
+    "correct": ".copy()",
+    "wrong1": ".clone()",
+    "wrong2": ".duplicate()",
+    "wrong3": ".new()",
+    "hint": ".copy() создаёт поверхностную копию"
+  },
+  {
+    "topic": "dict",
+    "question": "Как установить значение по умолчанию для ключа, если он не существует?",
+    "correct": ".setdefault(key, default)",
+    "wrong1": ".default(key, default)",
+    "wrong2": ".if_missing(key, default)",
+    "wrong3": ".put_if_absent(key, default)",
+    "hint": "setdefault() возвращает значение, по указанному ключу, если такого нет в словаре добавляет его, а в значение добавляет второй аргумент метода"
+  },
+  {
+    "topic": "dict",
+    "question": "Как удалить элемент по ключу, если он существует?",
+    "correct": "del d['key']",
+    "wrong1": ".delete('key')",
+    "wrong2": ".remove('key')",
+    "wrong3": ".discard('key')",
+    "hint": "del вызывает KeyError, если ключа нет"
+  },
+  {
+    "topic": "dict",
+    "question": "Как создать словарь из двух списков keys_list, values_list (ключи и значения)?",
+    "correct": "dict(zip(keys_list, values_list))",
+    "wrong1": "dict.from_lists(keys_list, values_list)",
+    "wrong2": "dict.merge(keys_list, values_list)",
+    "wrong3": "dict.combine(keys_list, values_list)",
+    "hint": "zip() связывает элементы списков попарно"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\ndata = {'a': 1, 'b': 2}\ndata.pop('c', 3)\nprint(data)",
+    "correct": "{'a': 1, 'b': 2}",
+    "wrong1": "KeyError",
+    "wrong2": "{'a': 1, 'b': 2, 'c': 3}",
+    "wrong3": "{}",
+    "hint": "pop() с default не вызывает ошибку, если ключ отсутствует"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'x': 10}\nd.update({'y': 20})\nprint(d)",
+    "correct": "{'x': 10, 'y': 20}",
+    "wrong1": "{'y': 20, 'x': 10}",
+    "wrong2": "{'x': 10}",
+    "wrong3": "{'y': 20}",
+    "hint": "update() добавляет/перезаписывает пары"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1, 'b': 2}\nd.clear()\nprint(d)",
+    "correct": "{}",
+    "wrong1": "{'a': 1, 'b': 2}",
+    "wrong2": "None",
+    "wrong3": "[]",
+    "hint": "clear() удаляет все элементы из словаря"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'name': 'Alice'}\nresult = 'name' in d\nprint(result)",
+    "correct": "True",
+    "wrong1": "False",
+    "wrong2": "None",
+    "wrong3": "KeyError",
+    "hint": "in проверяет наличие ключа в словаре"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'x': 5}\nval = d.get('y', 10)\nprint(val)",
+    "correct": "10",
+    "wrong1": "None",
+    "wrong2": "KeyError",
+    "wrong3": "5",
+    "hint": "get() возвращает default, если ключа нет"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1}\nd.setdefault('b', 2)\nprint(d)",
+    "correct": "{'a': 1, 'b': 2}",
+    "wrong1": "{'a': 1}",
+    "wrong2": "{'b': 2}",
+    "wrong3": "KeyError",
+    "hint": "setdefault() добавляет ключ, если его нет"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1}\nresult = d.pop('a', 0)\nprint(result)",
+    "correct": "1",
+    "wrong1": "0",
+    "wrong2": "None",
+    "wrong3": "KeyError",
+    "hint": "pop() с default безопасен при отсутствии ключа"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1}\nd['b'] = 2\nprint(d)",
+    "correct": "{'a': 1, 'b': 2}",
+    "wrong1": "{'b': 2}",
+    "wrong2": "{'a': 1}",
+    "wrong3": "{}",
+    "hint": "Оператор присвоения добавляет новый ключ"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1, 'b': 2}\nresult = d.items()\nprint(result)",
+    "correct": "dict_items([('a', 1), ('b', 2)])",
+    "wrong1": "[('a', 1), ('b', 2)]",
+    "wrong2": "{'a': 1, 'b': 2}",
+    "wrong3": "dict_keys(['a', 'b'])",
+    "hint": "items() возвращает специальный объект dict_items"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1, 'b': 2}\nresult = d.keys()\nprint(result)",
+    "correct": "dict_keys(['a', 'b'])",
+    "wrong1": "['a', 'b']",
+    "wrong2": "{'a', 'b'}",
+    "wrong3": "['a', 'b']",
+    "hint": "keys() возвращает специальный объект dict_keys"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {}\nd.update({'x': 5, 'y': 6})\nprint(d)",
+    "correct": "{'x': 5, 'y': 6}",
+    "wrong1": "{}",
+    "wrong2": "{'x': 5, 'y': 6}",
+    "wrong3": "{'x': 5, 'y': 6}",
+    "hint": "update() добавляет пары в пустой словарь"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'name': 'Bob'}\nd.popitem()\nprint(d)",
+    "correct": "{}",
+    "wrong1": "{'name': 'Bob'}",
+    "wrong2": "ValueError",
+    "wrong3": "None",
+    "hint": "popitem() удаляет последнюю пару из словаря"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1}\nval = d.get('a', 99)\nprint(val)",
+    "correct": "1",
+    "wrong1": "99",
+    "wrong2": "None",
+    "wrong3": "KeyError",
+    "hint": "get() возвращает значение, если ключ есть"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'x': 10}\nval = d.pop('x', 0)\nprint(val)",
+    "correct": "10",
+    "wrong1": "0",
+    "wrong2": "None",
+    "wrong3": "KeyError",
+    "hint": "pop() возвращает значение, если ключ существует"
+  },
+  {
+    "topic": "dict",
+    "question": "Что выведет код\nd = {'a': 1, 'b': 2}\nfor key in d:\n    print(key)",
+    "correct": "a\nb",
+    "wrong1": "'a': 1\n'b': 2",
+    "wrong2": "1\n2",
+    "wrong3": "{'a': 1}\n{'b': 2}",
+    "hint": "Цикл for по словарю проходит по ключам"
+  },
+  {
     "topic": "str",
-    "question": "Как перевести строку в нижний регистр?",
-    "correct": "lst.lower()",
-    "wrong1": "lower(lst)",
-    "wrong2": "lst.down()",
+    "question": "Как перевести строку s в нижний регистр?",
+    "correct": "s.lower()",
+    "wrong1": "lower(s)",
+    "wrong2": "s.down()",
     "wrong3": "нет такого метода",
-    "hint": "lst.lower() переводит всё в нижний регистр. \"Hello\".lower() → 'hello'"
+    "hint": "метод .lower() переводит всё в нижний регистр"
   },
   {
     "topic": "str",
-    "question": "Как проверить, начинается ли строка с префикса?",
-    "correct": "lst.startswith(\"he\")",
-    "wrong1": "lst.startwith(\"he\")",
-    "wrong2": "startswith(lst, \"he\")",
-    "wrong3": "lst.find(\"he\") == 0",
-    "hint": "lst.startswith(\"he\") проверяет начало строки"
+    "question": "Как перевести строку s в верхний регистр?",
+    "correct": "s.upper()",
+    "wrong1": "upper(s)",
+    "wrong2": "s.uppercase()",
+    "wrong3": "s.to_upper()",
+    "hint": "метод .upper() переводит все буквы в верхний регистр"
   },
   {
     "topic": "str",
-    "question": "Как удалить пробелы с обеих сторон строки?",
-    "correct": "lst.strip()",
-    "wrong1": "lst.trim()",
-    "wrong2": "strip(lst)",
-    "wrong3": "lst.remove(' ')",
-    "hint": "lst.strip() удаляет лишние пробелы"
+    "question": "Как сделать первую букву заглавной, в строке s, а остальные прописные?",
+    "correct": "s.capitalize()",
+    "wrong1": "s.title()",
+    "wrong2": "s.upper()",
+    "wrong3": "s.first_upper()",
+    "hint": ".capitalize() первую букву в строке заглавной, а остальные переводит в нижний регистр"
   },
   {
     "topic": "str",
-    "question": "Как разбить строку на список по разделителю?",
-    "correct": "lst.split(\",\")",
-    "wrong1": "split(lst, \",\")",
-    "wrong2": "lst.divide(\",\")",
-    "wrong3": "lst.separate(\",\")",
-    "hint": "lst.split(\",\") делит строку на части"
+    "question": "Как удалить пробелы слева и справа?",
+    "correct": "s.strip()",
+    "wrong1": "s.trim()",
+    "wrong2": "s.remove_spaces()",
+    "wrong3": "s.clean()",
+    "hint": ".strip() удаляет аргументы переданные в метод, по умолчанию стоит пробел"
   },
   {
     "topic": "str",
-    "question": "Как объединить элементы списка в строку через разделитель?",
-    "correct": "' '.join(lst)",
-    "wrong1": "lst.join(\" \")",
-    "wrong2": "join(lst, \" \")",
-    "wrong3": "lst.combine(\" \")",
-    "hint": "' '.join(['a','b']) → 'ab'"
+    "question": "Как заменить часть строки на другую?",
+    "correct": ".replace('a', 'b')",
+    "wrong1": ".sub('a', 'b')",
+    "wrong2": ".swap('a', 'b')",
+    "wrong3": ".change('a', 'b')",
+    "hint": ".replace(old, new) заменяет все вхождения"
   },
   {
-    "topic": "int",
-    "question": "Как преобразовать строку в целое число?",
-    "correct": "int(\"123\")",
-    "wrong1": "float(\"123\")",
-    "wrong2": "str(123)",
-    "wrong3": "int.convert()",
-    "hint": "int(\"123\") → 123"
+    "topic": "str",
+    "question": "Как проверить, начинается ли строка с подстроки 'http://'?",
+    "correct": ".startswith('http://')",
+    "wrong1": "'http://' in s",
+    "wrong2": ".find('http://') == 0",
+    "wrong3": ".begin('http://')",
+    "hint": ".startswith('http://') проверяет начало строки"
   },
   {
-    "topic": "int",
-    "question": "Как получить остаток от деления 7 % 3?",
-    "correct": "%",
-    "wrong1": "//",
-    "wrong2": "div()",
-    "wrong3": "math.mod(7, 3)",
-    "hint": "lst % 3 → 1"
+    "topic": "str",
+    "question": "Как получить длину строки?",
+    "correct": "len(s)",
+    "wrong1": ".length()",
+    "wrong2": ".size()",
+    "wrong3": ".count()",
+    "hint": "len(s) возвращает количество символов"
   },
   {
-    "topic": "int",
-    "question": "Как округлить число вниз до целого?",
-    "correct": "math.floor(3.9)",
-    "wrong1": "round(3.9)",
-    "wrong2": "math.ceil(3.1)",
-    "wrong3": "lst.floor()",
-    "hint": "math.floor(3.9) → 3"
+    "topic": "str",
+    "question": "Как удалить пробелы слева строки s?",
+    "correct": "s.lstrip()",
+    "wrong1": "s.left_strip()",
+    "wrong2": "s.strip_left()",
+    "wrong3": "s.trim_left()",
+    "hint": ".lstrip() убирает пробелы слева"
   },
   {
-    "topic": "int",
-    "question": "Как получить длину числа?",
-    "correct": "len(str(123))",
-    "wrong1": "len(123)",
-    "wrong2": "lst.length()",
-    "wrong3": "math.size(123)",
-    "hint": "Число нужно привести к строке: len(str(123)) → 3"
+    "topic": "str",
+    "question": "Как удалить пробелы справа строки s",
+    "correct": "s.rstrip()",
+    "wrong1": "s.right_strip()",
+    "wrong2": "s.rtrim()",
+    "wrong3": "s.strip_right()",
+    "hint": ".rstrip() убирает пробелы справа"
   },
   {
-    "topic": "float",
-    "question": "Как преобразовать строку во float?",
-    "correct": "float(\"123.45\")",
-    "wrong1": "int(\"123.45\")",
-    "wrong2": "str(\"123.45\")",
-    "wrong3": "float.convert()",
-    "hint": "float(\"123.45\") → 123.45"
+    "topic": "str",
+    "question": "Как проверить, состоит ли строка из букв?",
+    "correct": ".isalpha()",
+    "wrong1": ".isdigit()",
+    "wrong2": ".isalnum()",
+    "wrong3": ".check_alpha()",
+    "hint": ".isalpha() возвращает True, если в строке только буквы"
   },
   {
-    "topic": "float",
-    "question": "Как проверить, является ли число NaN?",
-    "correct": "math.isnan(x)",
-    "wrong1": "x.is_nan()",
-    "wrong2": "isnan(x)",
-    "wrong3": "type(x) == float",
-    "hint": "import math; math.isnan(float('nan')) → True"
+    "topic": "str",
+    "question": "Как проверить, состоит ли строка из цифр?",
+    "correct": ".isdigit()",
+    "wrong1": ".isnumber()",
+    "wrong2": ".isnumeric()",
+    "wrong3": ".is_digit()",
+    "hint": ".isdigit() возвращает True, если в строке только цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Как создать строку из числа?",
+    "correct": "str(42)",
+    "wrong1": ".to_str(42)",
+    "wrong2": "convert.str(42)",
+    "wrong3": "stringify(42)",
+    "hint": "str() преобразует любой тип в строку"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, есть ли подстрока 'sub' в строке s?",
+    "correct": "'sub' in s",
+    "wrong1": ".contains('sub')",
+    "wrong2": ".has('sub')",
+    "wrong3": ".include('sub')",
+    "hint": "in используется для проверки наличия подстроки"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, что строка не содержит спецсимволы?",
+    "correct": ".isalnum()",
+    "wrong1": ".isalpha()",
+    "wrong2": ".isnum()",
+    "wrong3": ".is_empty()",
+    "hint": ".isalnum() возвращает True, если только буквы и цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, все ли символы в строке маленькие?",
+    "correct": ".islower()",
+    "wrong1": ".lowercase()",
+    "wrong2": ".is_lower()",
+    "wrong3": ".all_lower()",
+    "hint": ".islower() возвращает True, если все буквы маленькие"
+  },
+  {
+    "topic": "str",
+    "question": "Как проверить, все ли символы в строке большие?",
+    "correct": ".isupper()",
+    "wrong1": ".uppercase()",
+    "wrong2": ".is_upper()",
+    "wrong3": ".all_upper()",
+    "hint": ".isupper() возвращает True, если все буквы заглавные"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'Hello World'\nprint(s.lower())",
+    "correct": "'hello world'",
+    "wrong1": "'HELLO WORLD'",
+    "wrong2": "'hello World'",
+    "wrong3": "'HelloWorld'",
+    "hint": ".lower() переводит всё в нижний регистр"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'Python'\nprint(s.upper())",
+    "correct": "'PYTHON'",
+    "wrong1": "'python'",
+    "wrong2": "'Python'",
+    "wrong3": "'PyThOn'",
+    "hint": ".upper() переводит всё в верхний регистр"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'hello'\nprint(s.capitalize())",
+    "correct": "'Hello'",
+    "wrong1": "'HELLO'",
+    "wrong2": "'hello'",
+    "wrong3": "'hELLo'",
+    "hint": "capitalize() делает первую букву заглавной"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = '   test   '\nprint(s.strip())",
+    "correct": "'test'",
+    "wrong1": "'test   '",
+    "wrong2": "'   test'",
+    "wrong3": "'t e s t'",
+    "hint": ".strip() удаляет пробелы с обеих сторон"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'abc123'\nprint(s.isalnum())",
+    "correct": "True",
+    "wrong1": "False",
+    "wrong2": "None",
+    "wrong3": "ValueError",
+    "hint": ".isalnum() возвращает True, если только буквы и цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'apple,banana,pear'\nprint(s.split(','))",
+    "correct": "['apple', 'banana', 'pear']",
+    "wrong1": "'apple banana pear'",
+    "wrong2": "split()",
+    "wrong3": "'apple, banana, pear'",
+    "hint": ".split(',') создаёт список по разделителю"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'Hello'\nprint(len(s))",
+    "correct": "5",
+    "wrong1": "6",
+    "wrong2": "None",
+    "wrong3": "KeyError",
+    "hint": "len(s) возвращает количество символов"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'abc123'\nprint(s.isalpha())",
+    "correct": "False",
+    "wrong1": "True",
+    "wrong2": "None",
+    "wrong3": "TypeError",
+    "hint": ".isalpha() возвращает True, только если все символы — буквы"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'Python is cool'\nprint(s.find('cool'))",
+    "correct": "10",
+    "wrong1": "-1",
+    "wrong2": "11",
+    "wrong3": "9",
+    "hint": "find('cool') возвращает индекс первого вхождения"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'Hello World'\nprint(s.index('x'))",
+    "correct": "Ошибка: ValueError",
+    "wrong1": "-1",
+    "wrong2": "''",
+    "wrong3": "None",
+    "hint": ".index('x') вызывает ошибку, если подстрока не найдена"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\nкод  s = 'abcdefg'\nprint(s[2:5])",
+    "correct": "'cde'",
+    "wrong1": "'bcd'",
+    "wrong2": "'def'",
+    "wrong3": "'bcdef'",
+    "hint": "Срез от индекса 2 до 5 (не включительно)"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\nкод s = 'abc123'\nprint(s.isnumeric())",
+    "correct": "False",
+    "wrong1": "True",
+    "wrong2": "None",
+    "wrong3": "TypeError",
+    "hint": ".isnumeric() работает только с числами Юникода"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'abc123'\nprint(s.isalnum())",
+    "correct": "True",
+    "wrong1": "False",
+    "wrong2": "None",
+    "wrong3": "ValueError",
+    "hint": "isalnum() → True, если строка содержит только буквы и цифры"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'Hello'\nprint(s * 2)",
+    "correct": "'HelloHello'",
+    "wrong1": "'Hello Hello'",
+    "wrong2": "'Hello 2'",
+    "wrong3": "Ошибка",
+    "hint": "* 2 повторяет строку дважды"
+  },
+  {
+    "topic": "str",
+    "question": "Что выведет код\ns = 'Python'\nprint(s.endswith('on'))",
+    "correct": "True",
+    "wrong1": "False",
+    "wrong2": "None",
+    "wrong3": "ValueError",
+    "hint": ".endswith('on') проверяет окончание строки"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как загрузить CSV-файл в DataFrame?",
+    "correct": "pd.read_csv('data.csv')",
+    "wrong1": ".csv('data.csv')",
+    "wrong2": ".load_csv('data.csv')",
+    "wrong3": ".read('data.csv')",
+    "hint": "read_csv() — стандартный метод для загрузки CSV"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как проверить первые 5 строк DataFrame df?",
+    "correct": "df.head(5)",
+    "wrong1": "df.first(5)",
+    "wrong2": "df.top(5)",
+    "wrong3": "df.start(5)",
+    "hint": "head(n) показывает первые n строк"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как получить общую информацию о типах и количестве значений в DataFrame?",
+    "correct": "df.info()",
+    "wrong1": "df.describe()",
+    "wrong2": "df.summary()",
+    "wrong3": "df.view()",
+    "hint": ".info() показывает типы и количество заполненных значений"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как удалить строки с пропущенными значениями в DataFrame df?",
+    "correct": "df.dropna()",
+    "wrong1": "df.fillna()",
+    "wrong2": "df.remove_na()",
+    "wrong3": "df.delete_empty()",
+    "hint": "dropna() удаляет NaN, fillna() заменяет их"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как заменить пропущенные значения в DataFrame df на 0 ?",
+    "correct": "df.fillna(0)",
+    "wrong1": "df.replace(na=0)",
+    "wrong2": "df.fill_na(0)",
+    "wrong3": "df.replace_nan(0)",
+    "hint": ".fillna() позволяет указать значение для замены NaN"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как удалить дубликаты из DataFrame df?",
+    "correct": "df.drop_duplicates()",
+    "wrong1": "df.remove_duplicates()",
+    "wrong2": "df.unique()",
+    "wrong3": "df.filter_duplicates()",
+    "hint": ".drop_duplicates() удаляет повторяющиеся строки"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как выбрать столбец 'age' из DataFrame df?",
+    "correct": "df['age']",
+    "wrong1": "df.age",
+    "wrong2": "df.get_column('age')",
+    "wrong3": "df.select('age')",
+    "hint": "Для выбора используй квадратные скобки"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как отфильтровать строки, где age > 30?",
+    "correct": "df[df['age'] > 30]",
+    "wrong1": "df.filter(age > 30)",
+    "wrong2": "df.where(age > 30)",
+    "wrong3": "df.select(age > 30)",
+    "hint": "Используй логическое выражение внутри квадратных скобок"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как изменить тип столбца 'price' на float?",
+    "correct": "df['price'] = df['price'].astype(float)",
+    "wrong1": "df['price'].convert(float)",
+    "wrong2": "df['price'].to_float()",
+    "wrong3": "df['price'].change_type(float)",
+    "hint": "astype() используется для преобразования типа"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как применить функцию `func` ко всем элементам столбца 'col1'?",
+    "correct": "df['col1'].apply(func)",
+    "wrong1": "map(func, df['col1'])",
+    "wrong2": "df['col1'].map(func)",
+    "wrong3": "df['col1'].transform(func)",
+    "hint": "apply() применяет функцию к каждому элементу"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как создать новый столбец 'total' как сумму 'x' и 'y'?",
+    "correct": "df['total'] = df['x'] + df['y']",
+    "wrong1": "df.add('total', df['x'] + df['y'])",
+    "wrong2": "df.insert('total', df['x'] + df['y'])",
+    "wrong3": "df.new_column('total', df['x'] + df['y'])",
+    "hint": "Просто присвоить выражение в новый столбец"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как удалить столбец 'temp_col' из DataFrame?",
+    "correct": "df.drop('temp_col', axis=1)",
+    "wrong1": "del df.temp_col",
+    "wrong2": "df.pop('temp_col')",
+    "wrong3": "df.remove('temp_col')",
+    "hint": "drop(col, axis=1) удаляет столбец"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как переименовать столбец 'old_name' в 'new_name'?",
+    "correct": "df.rename(columns={'old_name': 'new_name'})",
+    "wrong1": "df.rename('old_name', 'new_name')",
+    "wrong2": "df.change_column('old_name', 'new_name')",
+    "wrong3": "df.update_column('old_name', 'new_name')",
+    "hint": "rename() принимает словарь {старое_имя: новое_имя}"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как проверить количество уникальных значений в 'category'?",
+    "correct": "df['category'].nunique()",
+    "wrong1": "df['category'].unique_count()",
+    "wrong2": "len(df['category'].unique())",
+    "wrong3": "df['category'].count_unique()",
+    "hint": "nunique() возвращает число уникальных значений"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как сохранить DataFrame в CSV файл?",
+    "correct": "df.to_csv('output.csv')",
+    "wrong1": "save.csv('output.csv')",
+    "wrong2": "df.save('output.csv')",
+    "wrong3": "df.write_csv('output.csv')",
+    "hint": "to_csv() сохраняет данные в формате CSV"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как проверить, есть ли пропущенные значения в DataFrame?",
+    "correct": "df.isnull().sum()",
+    "wrong1": "df.isnan().sum()",
+    "wrong2": "df.check_missing()",
+    "wrong3": "df.missing_values()",
+    "hint": "isnull() возвращает True для пустых ячеек"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как отсортировать DataFrame по столбцу 'salary' по убыванию?",
+    "correct": "df.sort_values('salary', ascending=False)",
+    "wrong1": "df.order_by('salary', reverse=True)",
+    "wrong2": "df.sort('salary', descending=True)",
+    "wrong3": "df.sorted('salary', reverse=True)",
+    "hint": "ascending=False → сортировка по убыванию"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как сгруппировать данные по 'country' и посчитать среднее 'salary'?",
+    "correct": "df.groupby('country')['salary'].mean()",
+    "wrong1": "df.group_by('country').mean('salary')",
+    "wrong2": "df.groupby('country').avg('salary')",
+    "wrong3": "df.aggregate('salary', by='country')",
+    "hint": "groupby() + mean() считает среднее по группам"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как объединить два DataFrame по индексам?",
+    "correct": "pd.merge(df1, df2, left_index=True, right_index=True)",
+    "wrong1": "df1.join(df2)",
+    "wrong2": "df1.concat(df2)",
+    "wrong3": "df1.combine(df2)",
+    "hint": "merge() позволяет соединять по индексам или колонкам"
+  },
+  {
+    "topic": "pandas",
+    "question": "Как найти максимальное значение в каждом столбце?",
+    "correct": "df.max()",
+    "wrong1": "df.maximum()",
+    "wrong2": "df.top()",
+    "wrong3": "df.find_max()",
+    "hint": "max() возвращает максимальные значения по столбцам"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'A': [1, 2, None], 'B': [None, 4, 5]})\ndf.fillna(0)\nprint(df)\nЧто выведет print(df)?",
+    "correct": "   A  B\n0  1  0\n1  2  4\n2  0  5",
+    "wrong1": "   A  B\n0  1  NaN\n1  2  4\n2  NaN 5",
+    "wrong2": "   A  B\n0  1  NaN\n1  2  4\n2  NaN 5",
+    "wrong3": "   A  B\n0  1  NaN\n1  2  4\n2  NaN 5",
+    "hint": "fillna(0) заменяет NaN на 0, но не меняет исходный DataFrame без inplace=True"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'name': ['Alice', 'Bob', 'Charlie'], 'score': [85, 90, None]})\nprint(df.shape)",
+    "correct": "(3, 2)",
+    "wrong1": "(2, 3)",
+    "wrong2": "(3, 3)",
+    "wrong3": "(2, 2)",
+    "hint": "shape возвращает (количество_строк, количество_столбцов)"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'x': [1, 2, 3], 'y': [4, 5, 6]})\ndf = df.T\nprint(df.columns)",
+    "correct": "Index(['x', 'y'], dtype='object')",
+    "wrong1": "Index([0, 1, 2], dtype='object')",
+    "wrong2": "Index(['x', 'y', 'z'], dtype='object')",
+    "wrong3": "Index([0, 1], dtype='object')",
+    "hint": "T транспонирует DataFrame, столбцы становятся индексами"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\ndf = df.reset_index()\nprint(df.columns)",
+    "correct": "['index', 'A', 'B']",
+    "wrong1": "['A', 'B']",
+    "wrong2": "['row', 'A', 'B']",
+    "wrong3": "['id', 'A', 'B']",
+    "hint": "reset_index() добавляет старый индекс как столбец"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df.columns.tolist())",
+    "correct": "['A', 'B']",
+    "wrong1": "[0, 1]",
+    "wrong2": "{'A': 0, 'B': 1}",
+    "wrong3": "['A', 'B', 'C']",
+    "hint": "columns возвращает список столбцов"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df.iloc[1])",
+    "correct": "A    2\nB    5\nName: 1, dtype: int64",
+    "wrong1": "A    1\nB    4\nName: 0, dtype: int64",
+    "wrong2": "A    3\nB    6\nName: 2, dtype: int64",
+    "wrong3": "A    1\nB    4",
+    "hint": "iloc[] выбирает по числовому индексу"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df.loc[1])",
+    "correct": "A    2\nB    5\nName: 1, dtype: int64",
+    "wrong1": "A    1\nB    4\nName: 0, dtype: int64",
+    "wrong2": "A    3\nB    6\nName: 2, dtype: int64",
+    "wrong3": "A    1\nB    4",
+    "hint": "loc[] работает по метке индекса"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\ndf = df.rename(columns={'A': 'X'})\nprint(df.columns)",
+    "correct": "Index(['X', 'B'], dtype='object')",
+    "wrong1": "Index(['A', 'B'], dtype='object')",
+    "wrong2": "Index(['X', 'Y'], dtype='object')",
+    "wrong3": "Index(['A', 'X'], dtype='object')",
+    "hint": "rename(columns=dict) меняет имя столбца"
+  },
+  {
+    "topic": "pandas",
+    "question": "Что выведет код\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nprint(df.apply(lambda x: x.mean()))",
+    "correct": "A    2.0\nB    5.0\ndtype: float64",
+    "wrong1": "A    1\nB    4\ndtype: int64",
+    "wrong2": "A    3\nB    6\ndtype: float64",
+    "wrong3": "A    1\nB    4",
+    "hint": "apply() применяет функцию к каждому столбцу"
   }
 ]

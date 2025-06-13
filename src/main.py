@@ -27,6 +27,9 @@ load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
 
+
+application.add_error_handler(error_handler)
+
 # Обработчик /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user

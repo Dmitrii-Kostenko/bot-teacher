@@ -4,8 +4,13 @@ import json
 import random
 
 def load_questions():
-    with open("data/questions.json", "r", encoding="utf-8-sig") as f:
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    questions_path = os.path.join(base_dir, "data", "questions.json")
+
+    with open(questions_path, "r", encoding="utf-8-sig") as f:
         return json.load(f)
+    #with open("data/questions.json", "r", encoding="utf-8-sig") as f:
+    #    return json.load(f)
 
 def get_question(questions, topic=None):
     if topic:

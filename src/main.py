@@ -11,8 +11,8 @@ from telegram.ext import (
     ContextTypes,
 )
 
-import bot_handlers
-#from src import bot_handlers
+#import bot_handlers
+from src import bot_handlers
 
 # Логирование ошибок
 import logging

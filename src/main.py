@@ -40,7 +40,7 @@ load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
 if not TOKEN:
-    raise ValueError("TOKEN not found in .env")
+    raise ValueError("TOKEN environment variable not set")
 
 
 # =========================

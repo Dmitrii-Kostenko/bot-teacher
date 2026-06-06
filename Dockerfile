@@ -5,6 +5,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Явно копируем папку data ПЕРЕД остальными файлами
+COPY data/ ./data/
+
 COPY . .
 
 # Устанавливаем PYTHONPATH, чтобы Python видел папку src

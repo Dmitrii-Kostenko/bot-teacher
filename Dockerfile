@@ -11,4 +11,4 @@ COPY . .
 ENV PYTHONPATH=/app
 
 # Запускаем main.py из корня
-CMD ["python", "src/main.py"]
+CMD ["python", "-m", "src.main"]

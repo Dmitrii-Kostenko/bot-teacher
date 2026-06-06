@@ -1,115 +1,244 @@
-# # src/main.py
-
-
 import os
+import logging
+
 from dotenv import load_dotenv
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+
+from telegram import (
+    Update,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup
+)
+
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
     CallbackQueryHandler,
-    ContextTypes,
+    ContextTypes
 )
 
-#import bot_handlers
 from src import bot_handlers
 
-# Логирование ошибок
-import logging
+
+# =========================
+# LOGGING
+# =========================
+
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO
 )
+
 logger = logging.getLogger(__name__)
 
-# Загрузка токена из .env
+
+# =========================
+# ENV
+# =========================
+
 load_dotenv()
+
 TOKEN = os.getenv("TOKEN")
 
-# Обработчик ошибок
-async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
-    logger.warning('⚠️ Произошла ошибка: %s', context.error)
+if not TOKEN:
+    raise ValueError("TOKEN not found in .env")
 
-# Обработчик команды /start
+
+# =========================
+# START
+# =========================
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user = update.effective_user
-    await update.message.reply_html(
-        rf"Привет, {user.mention_html()}! 👋\n"
-        "Нажми '🔄 Случайный вопрос', чтобы начать.",
+
+    questions = context.bot_data["questions"]
+
+    topics = bot_handlers.get_topics(questions)
+
+    keyboard = []
+
+    for topic in topics:
+        keyboard.append([
+            InlineKeyboardButton(
+                topic,
+                callback_data=f"topic:{topic}"
+            )
+        ])
+
+    keyboard.append([
+        InlineKeyboardButton(
+            "🎲 Все темы",
+            callback_data="topic:all"
+        )
+    ])
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await update.message.reply_text(
+        "📚 Выбери тему:",
+        reply_markup=reply_markup
     )
 
-    # Кнопка для случайного вопроса
-    keyboard = [[InlineKeyboardButton("🔄 Случайный вопрос", callback_data="random")]]
+
+# =========================
+# TOPIC SELECT
+# =========================
+
+async def choose_topic(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    query = update.callback_query
+    await query.answer()
+
+    topic = query.data.split(":")[1]
+
+    context.user_data["topic"] = topic
+
+    await send_question(query, context)
+
+
+# =========================
+# SEND QUESTION
+# =========================
+
+async def send_question(query, context):
+
+    topic = context.user_data.get("topic", "all")
+
+    question = bot_handlers.get_question(
+        context.bot_data["questions"],
+        topic
+    )
+
+    context.user_data["current_question"] = question
+
+    keyboard = []
+
+    for option in question["options"]:
+        keyboard.append([
+            InlineKeyboardButton(
+                option,
+                callback_data=f"answer:{option}"
+            )
+        ])
+
     reply_markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text("Выбирай!", reply_markup=reply_markup)
 
-# Получаем случайный вопрос
-async def handle_random(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    query = update.callback_query
-    await query.answer()
+    await query.edit_message_text(
+        f"🧠 Тема: {question['topic']}\n\n"
+        f"{question['question']}",
+        reply_markup=reply_markup
+    )
 
-    try:
-        question = bot_handlers.get_question(context.bot_data["questions"])
-        context.user_data["current_question"] = question
 
-        buttons = [[InlineKeyboardButton(option, callback_data=option) for option in question["options"]]]
-        reply_markup = InlineKeyboardMarkup(buttons)
+# =========================
+# ANSWER
+# =========================
 
-        await query.edit_message_text(text=f"🧠 Вопрос: {question['question']}")
-        await query.message.reply_text("Выбери правильный вариант:", reply_markup=reply_markup)
-
-    except Exception as e:
-        logger.error("Ошибка при получении вопроса: %s", str(e))
-        await query.message.reply_text("❌ Не удалось получить вопрос. Попробуй ещё раз.")
-
-# Проверяем ответ
 async def handle_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
     query = update.callback_query
     await query.answer()
 
-    current_q = context.user_data.get("current_question")
+    current_question = context.user_data.get("current_question")
 
-    if not current_q:
-        await query.edit_message_text("❌ Нет активного вопроса")
+    if not current_question:
+        await query.edit_message_text("❌ Вопрос не найден")
         return
 
-    user_answer = query.data
-    correct = current_q["correct"]
-    hint = current_q.get("hint", "Подсказка отсутствует")
+    user_answer = query.data.split("answer:")[1]
 
-    if user_answer == correct:
-        await query.edit_message_text(f"✅ Верно!\n\n{current_q['question']}")
+    if user_answer == current_question["correct"]:
+
+        text = (
+            "✅ Правильно!\n\n"
+            f"{current_question['question']}"
+        )
+
     else:
-        await query.edit_message_text(f"❌ Неверно.\nПодсказка: {hint}")
 
-    # Кнопка следующего вопроса
-    next_btn = [[InlineKeyboardButton("🔄 Следующий", callback_data="random")]]
-    reply_markup = InlineKeyboardMarkup(next_btn)
-    await query.message.reply_text("Нажми ниже:", reply_markup=reply_markup)
+        text = (
+            "❌ Неправильно\n\n"
+            f"💡 Подсказка:\n{current_question['hint']}"
+        )
 
-# Главная точка входа
-if __name__ == '__main__':
-    print("🚀 Бот стартовал...")
+    keyboard = [[
+        InlineKeyboardButton(
+            "➡️ Следующий вопрос",
+            callback_data="next"
+        )
+    ]]
 
-    try:
-        # Создание приложения
-        application = ApplicationBuilder().token(TOKEN).build()
+    reply_markup = InlineKeyboardMarkup(keyboard)
 
-        # Регистрация обработчика ошибок
-        application.add_error_handler(error_handler)
+    await query.edit_message_text(
+        text,
+        reply_markup=reply_markup
+    )
 
-        # Регистрация обработчиков
-        application.add_handler(CommandHandler("start", start))
-        application.add_handler(CallbackQueryHandler(handle_random, pattern="^random$"))
-        application.add_handler(CallbackQueryHandler(handle_answer))
 
-        # Загрузка вопросов
-        application.bot_data["questions"] = bot_handlers.load_questions()
-        print("📚 Вопросы загружены")
+# =========================
+# NEXT QUESTION
+# =========================
 
-    except Exception as e:
-        print("❌ Ошибка загрузки вопросов:", str(e))
-        exit()
+async def next_question(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    print("📡 Бот запущен...")
-    application.run_polling()
+    query = update.callback_query
+    await query.answer()
+
+    await send_question(query, context)
+
+
+# =========================
+# ERRORS
+# =========================
+
+async def error_handler(update, context):
+
+    logger.error(
+        msg="Exception while handling update:",
+        exc_info=context.error
+    )
+
+
+# =========================
+# MAIN
+# =========================
+
+def main():
+
+    app = ApplicationBuilder().token(TOKEN).build()
+
+    questions = bot_handlers.load_questions()
+
+    app.bot_data["questions"] = questions
+
+    app.add_handler(CommandHandler("start", start))
+
+    app.add_handler(
+        CallbackQueryHandler(
+            choose_topic,
+            pattern=r"^topic:"
+        )
+    )
+
+    app.add_handler(
+        CallbackQueryHandler(
+            handle_answer,
+            pattern=r"^answer:"
+        )
+    )
+
+    app.add_handler(
+        CallbackQueryHandler(
+            next_question,
+            pattern=r"^next$"
+        )
+    )
+
+    app.add_error_handler(error_handler)
+
+    print("🚀 BOT STARTED")
+
+    app.run_polling()
+
+
+if __name__ == "__main__":
+    main()
